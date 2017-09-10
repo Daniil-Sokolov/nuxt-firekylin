@@ -43,7 +43,7 @@ release/
 # OS func folder
 .DS_Store
 
-site/
+www/
 .nuxt/
 data/
 static/workbox-sw*

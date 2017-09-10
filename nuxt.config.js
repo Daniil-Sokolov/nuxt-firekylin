@@ -10,7 +10,7 @@ const getDynamicRoutes = (data, type) => {
     let pages = Math.ceil(count / pageSize)
     acc.push(base)
     while (pages) {
-      acc.push(`/${type}/${pathname}/${pages--}`)
+      acc.push(`${base}/${pages--}`)
     }
     return acc
   }, [])
@@ -25,7 +25,17 @@ module.exports = {
       // render dynamic routes
       const cates = getDynamicRoutes(require('./data/cates.json'), 'category')
       const tags = getDynamicRoutes(require('./data/tags.json'), 'tag')
-      callback(null, cates.concat(tags))
+
+      const postData = require('./data/posts.json')
+      const len = postData.length
+      const posts = []
+      let pages = Math.ceil(len / pageSize)
+      let base = '/posts'
+      while (pages) {
+        posts.push(`${base}/${pages--}`)
+      }
+
+      callback(null, cates.concat(tags).concat(posts))
     }
   },
   loading: true,
@@ -51,8 +61,8 @@ module.exports = {
   ],
   plugins: ['~plugins/install.js'],
   modules: [
-    '@nuxtjs/sitemap',
-    '@nuxtjs/workbox'
+    '@nuxtjs/sitemap'
+    // '@nuxtjs/workbox'
   ],
   build: {
     extractCSS: true,

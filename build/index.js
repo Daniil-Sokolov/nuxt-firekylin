@@ -53,7 +53,7 @@ const main = function (data) {
     metaArchives[yearMonth] = metaArchives[yearMonth] || []
     metaArchives[yearMonth].push({
       title,
-      pathname: filename,
+      pathname: encodeURIComponent(filename),
       create_time: date.toISOString().slice(0, 10)
     })
   })
@@ -122,7 +122,7 @@ function makePostInfo (posts, index) {
     title: config.title,
     description: config.desc || config.description,
     keywords: (config.keywords || config.tags).join(','),
-    pathname: config.filename,
+    pathname: encodeURIComponent(config.filename),
     translation: config.from ? {
       author: config.author,
       social: config.social,
@@ -131,11 +131,11 @@ function makePostInfo (posts, index) {
     create_time: config.date.toISOString().slice(0, 10),
     prev: !prev ? {} : {
       title: prev.config.title,
-      pathname: prev.config.filename
+      pathname: encodeURIComponent(prev.config.filename)
     },
     next: !next ? {} : {
       title: next.config.title,
-      pathname: next.config.filename
+      pathname: encodeURIComponent(next.config.filename)
     }
   }
   return {
@@ -148,7 +148,7 @@ function makeTagsFile (map, file) {
   // 生成标签汇总数据
   const data = Object.keys(map).reduce((acc, key) => {
     acc.push({
-      pathname: key,
+      pathname: encodeURIComponent(key),
       name: key,
       count: map[key].length
     })
@@ -172,7 +172,7 @@ function getPostAbstract (item) {
     category,
     date,
     create_time: date.toISOString().slice(0, 10),
-    pathname: filename,
+    pathname: encodeURIComponent(filename),
     summary: item.source.slice(0, 200)
   }
 }

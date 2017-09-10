@@ -45,6 +45,12 @@ Renderer.prototype.image = function (href, title, text) {
   out += this.options.xhtml ? '/>' : '>'
   return out
 }
+Renderer.prototype.html = function (code) {
+  code = code.replace(/<iframe/g, '<lazy-component><iframe')
+    .replace(/<\/iframe>/g, '</iframe></lazy-component>')
+    .replace(/<img src="([^"]+)"/g, (m, g1) => `<img v-lazy="'${g1}'"`)
+  return code
+}
 
 const renderer = new Renderer()
 module.exports = function (source) {

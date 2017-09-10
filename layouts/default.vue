@@ -66,7 +66,7 @@
         <span>&nbsp;-&nbsp;</span><nuxt-link to="/">{{hostname}}</nuxt-link>
       </template>
       <br />
-      Powered by&nbsp;<a target="_blank" href="https://thinkjs.org">ThinkJS</a>&nbsp;&amp;&nbsp;<a target="_blank" rel="nofollow" class="external" href="https://firekylin.org">FireKylin</a>
+      Powered by&nbsp;<a target="_blank" href="https://nuxtjs.org">Nuxt.js</a>&nbsp;&amp;&nbsp;<a target="_blank" rel="nofollow" class="external" href="https://firekylin.org">FireKylin</a>
     </footer>
   </div>
 </div>

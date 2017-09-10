@@ -56,14 +56,6 @@ module.exports = {
   ],
   build: {
     extractCSS: true,
-    publicPath: '/static/',
-    build: {
-      extend (config, { isClient }) {
-        config.module.rule.push({
-          test: /\.yaml$/,
-          loader: 'raw-loader'
-        })
-      }
-    }
+    publicPath: '/static/'
   }
 }

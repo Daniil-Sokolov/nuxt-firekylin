@@ -2,10 +2,15 @@ const path = require('path')
 const fs = require('fs-extra')
 const shelljs = require('shelljs')
 const indent = require('indent')
+const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 const renderMd = require('./markded')
+
 const POST_TMPL = fs.readFileSync(path.join(__dirname, './post.vue')).toString()
 const PAGE_TMPL = fs.readFileSync(path.join(__dirname, './page.vue')).toString()
+const config = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '../config.yaml'), 'utf8'))
+
+fs.writeFileSync(path.join(__dirname, '../static/CNAME'), config.hostname)
 
 const main = function (data) {
   const metaTags = {}

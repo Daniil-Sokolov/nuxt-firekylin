@@ -12,4 +12,4 @@ Simple personal blog built with [Nuxt.js](https//:nuxtjs.org), using [Firekylin]
 - add GA
 - improve post summary
 - improve post meta info
-- !!! **Bug**: files under directories start with `_` 
+- <del>**Bug**: files under directories start with `_`</del>（resolved using surge）

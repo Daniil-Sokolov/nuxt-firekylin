@@ -44,6 +44,7 @@ release/
 .DS_Store
 
 www/
+dist/
 .nuxt/
 data/
 static/workbox-sw*

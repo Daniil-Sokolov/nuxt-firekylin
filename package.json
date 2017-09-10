@@ -8,7 +8,7 @@
     "build": "node ./build/",
     "start": "npm run build && npm run dev",
     "gen": "npm run build && nuxt generate",
-    "deploy": "gh-pages -d www"
+    "deploy": "surge"
   },
   "dependencies": {
     "fs-extra": "^4.0.1",
@@ -18,7 +18,7 @@
     "nuxt": "^1.0.0-rc11",
     "shelljs": "^0.7.8",
     "yaml-front-matter": "^3.4.0",
-    "yaml-loader": "^0.5.0",
-    "gh-pages": "^1.0.0"
-  }
+    "yaml-loader": "^0.5.0"
+  },
+  "devDependencies": {}
 }

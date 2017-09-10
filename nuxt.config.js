@@ -18,7 +18,6 @@ const getDynamicRoutes = (data, type) => {
 
 module.exports = {
   generate: {
-    dir: 'www',
     // avoid error with pre/code
     minify: false,
     routes (callback) {

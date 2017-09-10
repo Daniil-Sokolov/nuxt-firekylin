@@ -1,0 +1,33 @@
+title: 文蔺的博客
+description: 文蔺的前端学习记录，国外技术文章翻译，个人学习心得等等这些都会记录在这里。
+favicon: /img/favicon.ico
+
+site_owner: 文蔺
+site_url: http://www.wemlion.com
+twitter_url: https://twitter.com/
+github_url: https://github.com/AngusFu/
+logo_url: /imgs/avatar.jpg
+
+navigation:
+  -
+    url: /
+    option: home
+    label: 主页
+  - 
+    url: /archives
+    option: archive
+    label: 归档
+  - 
+    url: /link
+    option: link
+    label: 链接
+  - 
+    url: /tags
+    option: tags
+    label: 标签
+  -
+    url: /about
+    option: user
+    label: 关于
+
+page_size: 10

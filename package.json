@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-firekylin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "PORT=3333 nuxt",
+    "build": "node ./build/",
+    "gen": "npm run build && nuxt generate"
+  },
+  "dependencies": {
+    "fs-extra": "^4.0.1",
+    "highlight.js": "^9.12.0",
+    "json-loader": "^0.5.7",
+    "marked": "^0.3.6",
+    "nuxt": "^1.0.0-rc11",
+    "shelljs": "^0.7.8",
+    "yaml-front-matter": "^3.4.0",
+    "yaml-loader": "^0.5.0"
+  }
+}

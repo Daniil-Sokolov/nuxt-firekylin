@@ -55,3 +55,4 @@ pages/*.vue
 !pages/index.vue
 !pages/categories.vue
 !pages/archivies.vue
+!pages/search.vue

@@ -33,12 +33,12 @@
           <a v-if="twitter_url && twitter_url.indexOf('weibo.com') > -1" :href="twitter_url" class="inline"  rel="nofollow" target="_blank">
             <i class="iconfont icon-weibo" title="weibo"></i>
           </a>
-          <a class="inline" href="/rss.html">
+          <a class="inline" href="/atom.xml" target="_blank">
             <i class="iconfont icon-rss-v" title="RSS"></i>
           </a>
-          <a class="inline" href="/search.html">
+          <nuxt-link class="inline" to="/search">
             <i class="iconfont icon-search" title="Search"></i>
-          </a>
+          </nuxt-link>
         </li>
       </ul>
   </nav>

@@ -5,17 +5,23 @@ const indent = require('indent')
 const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 const renderMd = require('./markded')
+const renderRSS = require('./rss')
 
 const POST_TMPL = fs.readFileSync(path.join(__dirname, './post.vue')).toString()
 const PAGE_TMPL = fs.readFileSync(path.join(__dirname, './page.vue')).toString()
-const config = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '../config.yaml'), 'utf8'))
+const siteConf = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '../config.yaml'), 'utf8'))
 
-fs.writeFileSync(path.join(__dirname, '../static/CNAME'), config.hostname)
+fs.writeFileSync(path.join(__dirname, '../static/CNAME'), siteConf.hostname)
 
 const main = function (data) {
   const metaTags = {}
   const metaCates = {}
   const metaArchives = {}
+
+  fs.writeFile(
+    path.join(__dirname, '../static/atom.xml'),
+    renderRSS(data, siteConf)
+  )
 
   data.forEach((item, i) => {
     const {

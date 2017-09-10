@@ -6,3 +6,9 @@ Simple personal blog built with [Nuxt.js](https//:nuxtjs.org), using [Firekylin]
 
 - [Firekylin](https://github.com/firekylin/firekylin)
 - [Nuxt.js](https//:nuxtjs.org)
+
+## TODO
+
+- add GA
+- improve post summary
+- improve post meta info

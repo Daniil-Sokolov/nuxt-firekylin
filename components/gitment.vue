@@ -15,7 +15,7 @@
       if (this.$refs.container) {
         const gitment = new Gitment({
           ...this.$config.gitment,
-          id: path.indexOf('/psot') === 0 ? path.match(/\/[^/]+\/$/)[0] : path
+          id: path.indexOf('/post') === 0 ? path.match(/\/[^/]+\/$/)[0] : path
         })
         gitment.render(this.$refs.container)
       }

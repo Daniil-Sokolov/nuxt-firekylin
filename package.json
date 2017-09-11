@@ -8,7 +8,7 @@
     "build": "node ./build/",
     "start": "cross-env NODE_ENV=development npm run build && npm run dev",
     "gen": "cross-env NODE_ENV=production npm run build && nuxt generate",
-    "deploy": "npm run gen && surge ./dist --domain http://www.wemlion.com"
+    "deploy": "rm static/200.html && surge ./dist --domain http://www.wemlion.com"
   },
   "dependencies": {
     "vue-lazyload": "^1.1.3"

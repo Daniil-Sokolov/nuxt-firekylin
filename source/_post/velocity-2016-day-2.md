@@ -7,6 +7,12 @@ date: 2016-12-02 19:53:51
 desc: "笔记：velocity 2016 第二天"
 ---
 
+有幸得到 Velocity 2016 大会门票，屁颠屁颠跑去听分享。
+
+下面是第二天的笔记。记得比较简略，凑合看吧。
+
+[PPT 下载通道](http://velocity.oreilly.com.cn/2016/index.php?func=slidesvideos)已经放出来了，感兴趣的可以自己跟踪一下。
+
 # 阿里应用运维体系演变
 
 > 分享者：阿里，毕玄

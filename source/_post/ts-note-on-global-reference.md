@@ -5,7 +5,7 @@ tags:
   - TypeScript
 date: 2016-09-08 13:42:47
 desc: 
-----
+---
 
 朋友的朋友，最近的一个项目使用了 angular.js，是使用 typescript 开发的。
 

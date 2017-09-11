@@ -18,13 +18,13 @@ tags:
 
 本系列章节如下：
 
-1.  [项目结构（Project structuring）](/2016/nx-project-structure/)
-2.  [执行调度（Execution timing）](/2016/execution-timing/)
-3.  [沙箱求值（Sandboxed code evaluation）](/2016/sandbox-code-evaluation/)
-4.  [数据绑定简介](/2016/data-bind-dirty-checking)
-5.  ES6 Proxy 实现数据绑定 (本文)
-6.  自定义元素 
-7.  客户端路由
+* [项目结构（Project structuring）](/2016/nx-project-structure/)
+* [执行调度（Execution timing）](/2016/execution-timing/)
+* [沙箱求值（Sandboxed code evaluation）](/2016/sandbox-code-evaluation/)
+* [数据绑定简介](/2016/data-bind-dirty-checking)
+* ES6 Proxy 实现数据绑定 (本文)
+* 自定义元素 
+* 客户端路由
 
 ## 知识回顾
 

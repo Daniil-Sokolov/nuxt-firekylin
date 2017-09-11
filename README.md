@@ -10,7 +10,7 @@ Simple personal blog built with [Nuxt.js](https//:nuxtjs.org), using [Firekylin]
 ## TODO
 
 - add GA
-- improve post summary
+- <del>improve post summary<del> (give up)
 - improve post meta info
 - <del>improve code block (closing tag missed)</del> (resolved with some hack)
 - <del>**Bug**: files under directories start with `_`</del> (resolved using surge)

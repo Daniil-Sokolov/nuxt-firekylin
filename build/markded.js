@@ -23,7 +23,7 @@ Renderer.prototype.link = function (href, title, text) {
 // Vue SSR text escape 导致
 // https://github.com/vuejs/vue/commit/172dbf9faf4cb71dff72c77fdfe80fa1932d1ba3
 // 已修复 等待版本发布
-const wrapHljsCode = (code, lang) => `<textarea v-show="false" class="pre-area"><code class="hljs lang-${lang}">${code}</code></textarea>`
+const wrapHljsCode = (code, lang) => `<textarea v-show="false" class="pre-area" width="0" height="0"><code class="hljs lang-${lang}">${code}</code></textarea>`
 
 Renderer.prototype.code = function (code, language) {
   language = language || 'javascript'
@@ -34,7 +34,7 @@ Renderer.prototype.code = function (code, language) {
 
 // 临时措施 2017-09-10
 Renderer.prototype.codespan = function (code) {
-  return `<textarea class="codespan" v-show="false">${code}</textarea>`
+  return `<textarea class="codespan" v-show="false" width="0" height="0">${code}</textarea>`
 }
 
 Renderer.prototype.image = function (href, title, text) {

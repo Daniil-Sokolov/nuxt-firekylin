@@ -55,3 +55,7 @@ h1.intro{
   text-align: center;
   color: #999;
 }
+
+textarea.pre-area, textarea.codespan {
+  display: none
+}

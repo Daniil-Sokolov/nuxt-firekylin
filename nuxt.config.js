@@ -1,4 +1,3 @@
-
 const yaml = require('js-yaml')
 const fs = require('fs')
 const config = yaml.safeLoad(fs.readFileSync('./config.yaml', 'utf8'))
@@ -60,7 +59,8 @@ module.exports = {
   ],
   plugins: ['~plugins/install.js'],
   modules: [
-    '@nuxtjs/sitemap'
+    ['@nuxtjs/sitemap'],
+    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }]
     // '@nuxtjs/workbox'
   ],
   build: {

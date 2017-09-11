@@ -5,6 +5,7 @@ const indent = require('indent')
 const yaml = require('js-yaml')
 const mkdirp = require('mkdirp')
 const yamlFront = require('yaml-front-matter')
+
 const renderMd = require('./markded')
 const renderRSS = require('./rss')
 
@@ -98,7 +99,6 @@ Promise
   .all(pages.map(getFileInfo))
   .then(data => {
     data.forEach((item, i) => {
-      item.source = renderMd(item.source)
       const content = PAGE_TMPL
         .replace('__MARKDOWN__', indent(item.source, 6))
         .replace('__CONFIG__', JSON.stringify(item.config))
@@ -143,7 +143,7 @@ function makePostInfo (posts, index) {
   }
   return {
     meta,
-    content: renderMd(content)
+    content
   }
 }
 
@@ -177,7 +177,12 @@ function getPostAbstract (item) {
     date,
     create_time: date.toISOString().slice(0, 10),
     pathname: encodeURIComponent(filename),
-    summary: item.source.slice(0, 200)
+    summary: item.source
+      .replace(/[\n\r\t]/g, '')
+      .replace(/<svg[ >].*?<\/svg>/g, '')
+      .replace(/<\/?[^>]*>/g, '')
+      .replace(/(?:%\d+[\w-]+)+/g, '')
+      .substr(0, 200) + '...'
   }
 }
 
@@ -196,7 +201,7 @@ function getFrontMatter (source) {
   const { __mdContent } = result
   delete result.__mdContent
   return {
-    source: __mdContent,
+    source: renderMd(__mdContent),
     config: result
   }
 }

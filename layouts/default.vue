@@ -126,6 +126,9 @@
       metaDescription () {
         return this.$config.description
       }
+    },
+    mounted () {
+      this.$fixCode()
     }
   }
 </script>

@@ -44,25 +44,7 @@
       }
     },
     mounted () {
-      // 临时措施  2017-09-10
-      // Vue SSR text escape 导致
-      // https://github.com/vuejs/vue/commit/172dbf9faf4cb71dff72c77fdfe80fa1932d1ba3
-      // 已修复 等待版本发布
-      const preAreas = [...this.$el.querySelectorAll('.pre-area')]
-      preAreas.forEach((elem) => {
-        const pre = document.createElement('pre')
-        pre.innerHTML = decodeURIComponent(elem.value)
-        elem.parentNode.insertBefore(pre, elem)
-        elem.parentNode.removeChild(elem)
-      })
-      
-      const codespanAreas = [...this.$el.querySelectorAll('.codespan')]
-      codespanAreas.forEach((elem) => {
-        const span = document.createElement('code')
-        span.textContent = elem.value
-        elem.parentNode.insertBefore(span, elem)
-        elem.parentNode.removeChild(elem)
-      })
+      this.$fixCode()
     }
   }
 </script>

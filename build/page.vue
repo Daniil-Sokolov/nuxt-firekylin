@@ -20,6 +20,9 @@ __MARKDOWN__
       return {
         title: config.title
       }
+    },
+    mounted () {
+      this.$fixCode()
     }
   }
 </script>

@@ -7,7 +7,7 @@
      - JavaScript
      - 算法
     
-----
+---
 
 从基础入手。前面学习了[插入排序](../algo-insertion-sort/)和[选择排序](../algo-selection-sort)。
 

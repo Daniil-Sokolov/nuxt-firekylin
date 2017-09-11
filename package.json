@@ -6,14 +6,15 @@
   "scripts": {
     "dev": "cross-env PORT=3333 nuxt",
     "build": "node ./build/",
-    "start": "npm run build && npm run dev",
-    "gen": "npm run build && nuxt generate",
-    "deploy": "surge ./dist --domain http://nuxt.wemlion.com"
+    "start": "cross-env NODE_ENV=development npm run build && npm run dev",
+    "gen": "cross-env NODE_ENV=production npm run build && nuxt generate",
+    "deploy": "npm run gen && surge ./dist --domain http://www.wemlion.com"
   },
   "dependencies": {
     "vue-lazyload": "^1.1.3"
   },
   "devDependencies": {
+    "@nuxtjs/google-analytics": "^1.0.0",
     "@nuxtjs/sitemap": "^0.0.3",
     "@nuxtjs/workbox": "^1.2.0",
     "cross-env": "^5.0.5",

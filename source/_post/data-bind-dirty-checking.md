@@ -17,13 +17,14 @@ tags:
 本系列主要是如何开发一个开源的客户端框架，框架名为 NX。我将在本系列中分享框架编写过程中如何克服遇到的主要困难。对 NX 感兴趣的朋友可以点击 NX 项目[主页](http://nx-framework.com/)查看。
 
 本系列章节如下：
-1.  [项目结构（Project structuring）](/2016/nx-project-structure/)
-2.  [执行调度（Execution timing）](/2016/execution-timing/)
-3.  [沙箱求值（Sandboxed code evaluation）](/2016/sandbox-code-evaluation/)
-4.  数据绑定简介(本文)
-5.  [ES6 Proxy 实现数据绑定](/2016/es6-proxy-data-binding/)
-6.  自定义元素
-7.  客户端路由
+
+* [项目结构（Project structuring）](/2016/nx-project-structure/)
+* [执行调度（Execution timing）](/2016/execution-timing/)
+* [沙箱求值（Sandboxed code evaluation）](/2016/sandbox-code-evaluation/)
+* 数据绑定简介(本文)
+* [ES6 Proxy 实现数据绑定](/2016/es6-proxy-data-binding/)
+* 自定义元素
+* 客户端路由
 
 ## 数据绑定简介
 

@@ -15,7 +15,7 @@
           <span class="date">{{post.create_time}}</span>
         </div>
         <!--<div class="comment">
-            <a :href="`/post/${post.pathname}#comments`">{{post.comment_num}} comments</a>
+          <a :href="`/post/${post.pathname}#comments`">{{post.comment_num}} comments</a>
         </div>-->
       </div>
 
@@ -24,9 +24,9 @@
       </h1>
 
       <div class="entry-content">
-        {{post.summary}}
+        <div class="summary" v-html="post.summary"></div>
         <p class="more">
-            <nuxt-link :to="`/post/${post.pathname}`">阅读全文 »</nuxt-link>
+          <nuxt-link :to="`/post/${post.pathname}`">阅读全文 »</nuxt-link>
         </p>
       </div>
 
@@ -94,6 +94,9 @@
           path
         }
       }
+    },
+    mounted () {
+      this.$fixCode()
     }
   }
 </script>

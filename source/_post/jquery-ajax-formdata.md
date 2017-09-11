@@ -1,5 +1,4 @@
 ---
-
 title: "使用 jQuery.ajax 上传带文件的表单"
 desc:  "使用 jQuery.ajax 上传带文件的表单"
 date: 2016-10-29
@@ -7,7 +6,7 @@ tags:
   - JavaScript
   - 原创
   - jQuery
-----
+---
 
 今天帮人看代码的时候，遇到一点小问题。使用 jQuery 上传带文件的表单时，会有些问题。
 

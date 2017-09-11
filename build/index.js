@@ -163,10 +163,11 @@ function getPostAbstract (item) {
     tags,
     title,
     category,
-    filename
+    filename,
+    editor
   } = item.config
   return {
-    user: 'wemlion',
+    user: editor || siteConf.site_owner || 'admin',
     title,
     tags,
     category,

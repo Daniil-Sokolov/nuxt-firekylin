@@ -21,7 +21,7 @@ tags:
 
 此时此刻，你对 [fetch](https://www.sitepoint.com/introduction-to-the-fetch-api/) 可能已经很熟悉了。它是浏览器提供的用以替代旧版的`XMLHttpRequest`的原生 API。
 
-<iframe src="/caniuse/embed.html?feat=fetch&amp;periods=future_1,current,past_1,past_2" frameborder="0" width="100%" height="510px"></iframe>
+<caniuse src="/caniuse/embed.html?feat=fetch&amp;periods=future_1,current,past_1,past_2"></caniuse>
 
 并非所有浏览器都完美支持 fetch，但你可以使用 [GitHub 上的 fetch polyfill](https://github.com/github/fetch)（如果没事做，可以看看 [Fetch 标准](https://fetch.spec.whatwg.org/)）。
 

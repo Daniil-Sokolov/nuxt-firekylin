@@ -51,7 +51,7 @@
       const preAreas = [...this.$el.querySelectorAll('.pre-area')]
       preAreas.forEach((elem) => {
         const pre = document.createElement('pre')
-        pre.innerHTML = elem.value
+        pre.innerHTML = decodeURIComponent(elem.value)
         elem.parentNode.insertBefore(pre, elem)
         elem.parentNode.removeChild(elem)
       })

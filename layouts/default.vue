@@ -1,46 +1,77 @@
+<style>
+#__nuxt,
+.wrapper {
+  width: 100%;
+  height: 100%;  
+}
+.main {
+  height: 100%;
+}
+
+.main > div,
+.main > section,
+.main > article {
+  min-height: 100%;
+  margin-bottom: -81px;
+
+  &:after {
+    display: block;
+    content: '';
+    height: 81px;
+  }
+  
+  border-bottom: 0;
+}
+.main > #footer {
+  position: relative;
+  top: -1px;
+  z-index: 1;
+  border-top: 1px solid #ddd;
+}
+</style>
 <template lang="html">
 <div class="wrapper">
   <nav id="sidebar" class="behavior_1">
-      <div class="wrap">
-        <div class="profile">
-            <nuxt-link to="/">
-                <img :src="logo_url" :alt="title">
-            </nuxt-link>
-            <span>{{title}}</span>
-        </div>
-        <ul class="buttons">
-          <li v-for="nav in navigation" :key="nav.label">
-            <nuxt-link v-if="nav.url.indexOf('http') === -1" :to="nav.url" :title="nav.label">
-              <i :class="['iconfont', 'icon-' + nav.option]"></i>
-              <span>&nbsp;{{nav.label}}</span>
-            </nuxt-link>
-            <a v-else :href="nav.url" :title="nav.label" target="_blank">
-              <i :class="['iconfont', 'icon-' + nav.option]"></i>
-              <span>&nbsp;{{nav.label}}</span>
-            </a>
-          </li>
-        </ul>
+    <div class="wrap">
+      <div class="profile">
+        <nuxt-link to="/">
+            <img :src="logo_url" :alt="title">
+        </nuxt-link>
+        <span>{{title}}</span>
       </div>
-
       <ul class="buttons">
-        <li>
-          <a v-if="github_url" :href="github_url" class="inline" rel="nofollow" target="_blank">
-            <i class="iconfont icon-github-v" title="GitHub"></i>
-          </a>
-          <a v-if="twitter_url && twitter_url.indexOf('twitter.com') > -1" :href="twitter_url" class="inline"  rel="nofollow" target="_blank">
-            <i class="iconfont icon-twitter-v" title="Twitter"></i>
-          </a>
-          <a v-if="twitter_url && twitter_url.indexOf('weibo.com') > -1" :href="twitter_url" class="inline"  rel="nofollow" target="_blank">
-            <i class="iconfont icon-weibo" title="weibo"></i>
-          </a>
-          <a class="inline" href="/atom.xml" target="_blank">
-            <i class="iconfont icon-rss-v" title="RSS"></i>
-          </a>
-          <nuxt-link class="inline" to="/search">
-            <i class="iconfont icon-search" title="Search"></i>
+        <li v-for="nav in navigation" :key="nav.label">
+          <nuxt-link v-if="nav.url.indexOf('http') === -1" :to="nav.url" :title="nav.label">
+            <i :class="['iconfont', 'icon-' + nav.option]"></i>
+            <span>&nbsp;{{nav.label}}</span>
           </nuxt-link>
+          <a v-else :href="nav.url" :title="nav.label" target="_blank">
+            <i :class="['iconfont', 'icon-' + nav.option]"></i>
+            <span>&nbsp;{{nav.label}}</span>
+          </a>
         </li>
       </ul>
+    </div>
+
+    <ul class="buttons">
+      <li>
+        <a v-if="github_url" :href="github_url" class="inline" rel="nofollow" target="_blank">
+          <i class="iconfont icon-github-v" title="GitHub"></i>
+        </a>
+        <a v-if="twitter_url && twitter_url.indexOf('twitter.com') > -1" :href="twitter_url" class="inline"  rel="nofollow" target="_blank">
+          <i class="iconfont icon-twitter-v" title="Twitter"></i>
+        </a>
+        <a v-if="twitter_url && twitter_url.indexOf('weibo.com') > -1" :href="twitter_url" class="inline"  rel="nofollow" target="_blank">
+          <i class="iconfont icon-weibo" title="weibo"></i>
+        </a>
+        <a class="inline" href="/atom.xml" target="_blank">
+          <i class="iconfont icon-rss-v" title="RSS"></i>
+        </a>
+        <nuxt-link class="inline" to="/search">
+          <i class="iconfont icon-search" title="Search"></i>
+        </nuxt-link>
+      </li>
+    </ul>
   </nav>
   <div id="header">
     <div class="btn-bar"><i></i></div>
@@ -52,7 +83,7 @@
 
   <div id="sidebar-mask"></div>
 
-  <div id="main">
+  <div id="main" class="main">
     <nuxt />
     <footer id="footer" class="inner">
       &copy; {{ currentYear }}&nbsp;-&nbsp; {{title}}

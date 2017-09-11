@@ -12,5 +12,5 @@ Simple personal blog built with [Nuxt.js](https//:nuxtjs.org), using [Firekylin]
 - add GA
 - improve post summary
 - improve post meta info
-- improve code block (closing tag missed)
-- <del>**Bug**: files under directories start with `_`</del>（resolved using surge）
+- <del>improve code block (closing tag missed)</del> (resolved with some hack)
+- <del>**Bug**: files under directories start with `_`</del> (resolved using surge)

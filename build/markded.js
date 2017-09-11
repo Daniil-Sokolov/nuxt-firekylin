@@ -28,7 +28,7 @@ const wrapHljsCode = (code, lang) => `<textarea v-show="false" class="pre-area">
 Renderer.prototype.code = function (code, language) {
   language = language || 'javascript'
   const markup = hljs.highlight(language, code).value
-  const result = wrapHljsCode(markup, language)
+  const result = wrapHljsCode(encodeURIComponent(markup), language)
   return result
 }
 
@@ -46,9 +46,7 @@ Renderer.prototype.image = function (href, title, text) {
   return out
 }
 Renderer.prototype.html = function (code) {
-  code = code.replace(/<iframe/g, '<lazy-component><iframe')
-    .replace(/<\/iframe>/g, '</iframe></lazy-component>')
-    .replace(/<img src="([^"]+)"/g, (m, g1) => `<img v-lazy="'${g1}'"`)
+  code = code.replace(/<img src="([^"]+)"/g, (m, g1) => `<img v-lazy="'${g1}'"`)
   return code
 }
 

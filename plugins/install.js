@@ -3,6 +3,8 @@ import VueLazyload from 'vue-lazyload'
 
 import Pagination from '../components/pagination.vue'
 import Collection from '../components/collection.vue'
+import Embeding from '../components/embeding.vue'
+import Caniuse from '../components/caniuse.vue'
 // eslint-disable-next-line
 import config from 'json-loader!yaml-loader!../config.yaml'
 
@@ -18,4 +20,6 @@ Vue.use(VueLazyload, {
 })
 Vue.component('pagination', Pagination)
 Vue.component('collection', Collection)
+Vue.component('embeding', Embeding)
+Vue.component('caniuse', Caniuse)
 Vue.prototype.$config = Object.freeze(config)

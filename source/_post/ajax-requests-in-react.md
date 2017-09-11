@@ -89,7 +89,7 @@ ReactDOM.render(
 首先引入 `axios`。
 
 ```javascript
-`import axios from 'axios';`
+import axios from 'axios';
 ```
 
 constructor 方法非常标准，调用 `super`，然后初始化 state，设置一个空的 `posts` 数组。

@@ -13,7 +13,7 @@ tags:
 
 我是 [HTML 表单验证](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/Data_form_validation)（HTML form validation） 的超级粉丝，因为它取代了我使用了近 20 年的 JavaScript 代码。不幸的是，[Safari](http://caniuse.com/#feat=form-validation) 并不支持这个特性（谈到 Web 时，先别跟我提 Apple 和他们的优先级）。
 
-<iframe src="/caniuse/embed.html?feat=form-validation&amp;periods=future_3,future_2,future_1,current,past_1,past_2,past_3,past_4,past_5" frameborder="0" width="100%" height="741px"></iframe>
+<caniuse src="/caniuse/embed.html?feat=form-validation&amp;periods=future_3,future_2,future_1,current,past_1,past_2,past_3,past_4,past_5"></caniuse>
 
 不过，我确实很喜欢这个主意，将问题交给 HTML 自己解决。实际上，最近有个网站展示了许多类似的例子：[You Might Not Need JavaScript](http://youmightnotneedjs.com/)。如果还没看过，赶紧点开吧。这是一个极好的例子，展示了 HTML 和 CSS 可以如何取代我们使用了多年的 JavaScript 片段。
 

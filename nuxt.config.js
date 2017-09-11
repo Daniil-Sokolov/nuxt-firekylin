@@ -60,8 +60,8 @@ module.exports = {
   ],
   plugins: ['~plugins/install.js'],
   modules: [
-    '@nuxtjs/sitemap',
-    '@nuxtjs/workbox'
+    '@nuxtjs/sitemap'
+    // '@nuxtjs/workbox'
   ],
   build: {
     extractCSS: true,

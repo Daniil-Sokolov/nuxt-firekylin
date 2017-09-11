@@ -8,7 +8,7 @@
     "build": "node ./build/",
     "start": "npm run build && npm run dev",
     "gen": "npm run build && nuxt generate",
-    "deploy": "surge --domain https://nuxt.wemlion.com"
+    "deploy": "surge ./dist --domain http://nuxt.wemlion.com"
   },
   "dependencies": {
     "vue-lazyload": "^1.1.3"

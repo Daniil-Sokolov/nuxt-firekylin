@@ -56,5 +56,5 @@ pages/*.vue
 !pages/tags.vue
 !pages/index.vue
 !pages/categories.vue
-!pages/archivies.vue
+!pages/archives.vue
 !pages/search.vue

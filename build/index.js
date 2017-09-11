@@ -1,8 +1,9 @@
 const path = require('path')
 const fs = require('fs-extra')
-const shelljs = require('shelljs')
+const glob = require('glob')
 const indent = require('indent')
 const yaml = require('js-yaml')
+const mkdirp = require('mkdirp')
 const yamlFront = require('yaml-front-matter')
 const renderMd = require('./markded')
 const renderRSS = require('./rss')
@@ -11,6 +12,8 @@ const POST_TMPL = fs.readFileSync(path.join(__dirname, './post.vue')).toString()
 const PAGE_TMPL = fs.readFileSync(path.join(__dirname, './page.vue')).toString()
 const siteConf = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '../config.yaml'), 'utf8'))
 
+mkdirp.sync(path.join(__dirname, '../data'))
+mkdirp.sync(path.join(__dirname, '../pages/post'))
 fs.writeFileSync(path.join(__dirname, '../static/CNAME'), siteConf.hostname)
 
 const main = function (data) {
@@ -83,8 +86,8 @@ const main = function (data) {
   })
 }
 
-const postFiles = Array.from(shelljs.ls('./source/_post/*.md'))
-const pages = Array.from(shelljs.ls('./source/*.md'))
+const postFiles = Array.from(glob.sync('./source/_post/*.md'))
+const pages = Array.from(glob.sync('./source/*.md'))
 
 Promise
   .all(postFiles.map(getFileInfo))

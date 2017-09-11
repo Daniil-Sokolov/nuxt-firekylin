@@ -15,6 +15,14 @@ github_url: https://github.com/AngusFu/
 ## logo 图片路径
 logo_url: /imgs/avatar.jpg
 
+## gitment config
+gitment:
+  repo: gitment-store
+  owner: AngusFu
+  oauth:
+    client_id: be59313ed5e732f15480 
+    client_secret: b682a90980bc35fa770b539d5f6bf0a7d400eb08 
+
 ## 左侧导航栏配置
 navigation:
   -

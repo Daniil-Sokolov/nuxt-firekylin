@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import VueLazyload from 'vue-lazyload'
 
+// components
 import Pagination from '../components/pagination.vue'
 import Collection from '../components/collection.vue'
 import Embeding from '../components/embeding.vue'
 import Caniuse from '../components/caniuse.vue'
+import GitmentComment from '../components/gitment.vue'
+
 // eslint-disable-next-line
 import config from 'json-loader!yaml-loader!../config.yaml'
 
@@ -21,6 +24,7 @@ Vue.component('pagination', Pagination)
 Vue.component('collection', Collection)
 Vue.component('embeding', Embeding)
 Vue.component('caniuse', Caniuse)
+Vue.component('gitment', GitmentComment)
 
 // 注入配置
 Vue.prototype.$config = Object.freeze(config)

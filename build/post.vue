@@ -22,6 +22,7 @@
     <nuxt-link v-if="post.prev.title" :to="`/post/${post.prev.pathname}`" :title="post.prev.title" class="prev">&laquo; {{ post.prev.title }}</nuxt-link>
     <nuxt-link v-if="post.next.title" :to="`/post/${post.next.pathname}`" :title="post.next.title" class="next">{{ post.next.title }} &raquo;</nuxt-link>
   </nav>
+  <gitment />
 </div>
 </template>
 

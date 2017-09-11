@@ -24,9 +24,8 @@
 }
 .main > #footer {
   position: relative;
-  top: -1px;
   z-index: 1;
-  border-top: 1px solid #ddd;
+  border-top: 0; 
 }
 </style>
 <template lang="html">
@@ -74,14 +73,14 @@
     </ul>
   </nav>
   <div id="header">
-    <div class="btn-bar"><i></i></div>
+    <div class="btn-bar" @click.prevent="toggleSide"><i></i></div>
     <h1><nuxt-link to="/">{{title}}</nuxt-link></h1>
     <nuxt-link class="me" to="/about/">
       <img :src="logo_url" :alt="title">
     </nuxt-link>
   </div>
 
-  <div id="sidebar-mask"></div>
+  <div id="sidebar-mask" @click.prevent="toggleSide" :style="{display: sideMaskShow ? 'block' : 'none'}"></div>
 
   <div id="main" class="main">
     <nuxt />
@@ -119,12 +118,26 @@
         currentYear: new Date().getFullYear(),
         mpsbeian: config.mpsbeian || '',
         miitbeian: config.miitbeian || '',
-        hostname: config.hostname || ''
+        hostname: config.hostname || '',
+        sideMaskShow: false
       }
     },
     computed: {
       metaDescription () {
         return this.$config.description
+      }
+    },
+    methods: {
+      toggleSide () {
+        const SIDE_CLSN = 'side'
+        const body = document.body
+        if (body.className.indexOf(SIDE_CLSN) > -1) {
+          body.className = body.className.replace(SIDE_CLSN, '')
+          this.sideMaskShow = false
+        } else {
+          body.className += (' ' + SIDE_CLSN)
+          this.sideMaskShow = true
+        }
       }
     },
     mounted () {

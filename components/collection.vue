@@ -29,7 +29,6 @@
           <nuxt-link :to="`/post/${post.pathname}`">阅读全文 »</nuxt-link>
         </p>
       </div>
-
     </article>
     <pagination :pagination="pagination" v-if="pagination"/>
   </section>

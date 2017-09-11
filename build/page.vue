@@ -4,6 +4,7 @@
     <div class="entry-content">
 __MARKDOWN__
     </div>
+    <gitment v-if="useComment" />
   </article>
 </template>
 <script>
@@ -18,7 +19,8 @@ __MARKDOWN__
     },
     data () {
       return {
-        title: config.title
+        title: config.title,
+        useComment: !!config.comment
       }
     },
     mounted () {

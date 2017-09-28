@@ -8,7 +8,10 @@
     "build": "node ./build/",
     "start": "cross-env NODE_ENV=development npm run build && npm run dev",
     "gen": "cross-env NODE_ENV=production npm run build && nuxt generate",
-    "deploy": "rm ./dist/200.html && surge ./dist --domain http://www.wemlion.com"
+    "clean": "rimraf dist/200.html && rimraf dist/**/*.map",
+    "dw": "surge ./dist --domain http://www.wemlion.com",
+    "ds": "surge ./dist --domain https://wemlion.surge.sh",
+    "deploy": "npm run clean && npm run dw && npm run ds"
   },
   "dependencies": {
     "gitment": "0.0.3",
@@ -28,6 +31,7 @@
     "marked": "^0.3.6",
     "mkdirp": "^0.5.1",
     "nuxt": "^1.0.0-rc11",
+    "rimraf": "^2.6.2",
     "surge": "^0.19.0",
     "yaml-front-matter": "^3.4.0",
     "yaml-loader": "^0.5.0"

@@ -38,6 +38,7 @@ Renderer.prototype.codespan = function (code) {
 }
 
 Renderer.prototype.image = function (href, title, text) {
+  href = href.replace(/http:\/\/(s|p)[0-9]\.(qhimg|qhres)\.com/, "https://$1.ssl.$2.com")
   var out = '<img v-lazy="`' + href + '`" alt="' + text + '"'
   if (title) {
     out += ' title="' + title + '"'

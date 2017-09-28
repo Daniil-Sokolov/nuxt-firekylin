@@ -60,11 +60,14 @@ module.exports = {
   plugins: ['~plugins/install.js'],
   modules: [
     ['@nuxtjs/sitemap'],
-    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }]
-    // '@nuxtjs/workbox'
+    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }],
+    '@nuxtjs/workbox'
   ],
   build: {
     extractCSS: true,
-    publicPath: '/static/'
+    publicPath: '/static/',
+  },
+  render: {
+    resourceHints: false
   }
 }

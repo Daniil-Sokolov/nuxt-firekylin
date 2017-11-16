@@ -57,7 +57,13 @@ module.exports = {
   css: [
     '~assets/css/all.css'
   ],
-  plugins: ['~plugins/install.js'],
+  plugins: [
+    '~plugins/install.js',
+	{
+	  src: '~plugins/fenxi.js',
+	  ssr: false
+	}
+  ],
   modules: [
     ['@nuxtjs/sitemap'],
     ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }],

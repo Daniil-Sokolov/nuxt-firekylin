@@ -34,10 +34,6 @@ navigation:
     option: archive
     label: 归档
   - 
-    url: /link
-    option: link
-    label: 链接
-  - 
     url: /tags
     option: tags
     label: 标签
@@ -45,6 +41,10 @@ navigation:
     url: /about
     option: user
     label: 关于
+  - 
+    url: /link
+    option: link
+    label: 链接
 
 ## 分页大小
 page_size: 10

@@ -28,6 +28,7 @@ title: 资源链接
 - [SVGTrick](http://svgtrick.com/)
 - [icodeit](http://icodeit.org/)
 - [紫云飞](http://www.cnblogs.com/ziyunfei/)
+- [侯振宇L4](http://www.cnblogs.com/sskyy/)
 - [jackpu](http://www.jackpu.com/tag/web/)
 - [BaiduEFE](http://efe.baidu.com/)
 - [DDFE](https://defed.github.io/archives/)

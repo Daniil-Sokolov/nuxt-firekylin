@@ -5,7 +5,7 @@ Simple personal blog built with [Nuxt.js](https//:nuxtjs.org), using [Firekylin]
 ## Related
 
 - [Firekylin](https://github.com/firekylin/firekylin)
-- [Nuxt.js](https//:nuxtjs.org)
+- [Nuxt.js](https://nuxtjs.org)
 
 ## TODO
 

@@ -11,7 +11,7 @@ module.exports = function (data, config) {
     </author>
       ${
         data.slice(0, 10).map(item => `<entry>        
-<title>item.config.title</title>
+<title>${item.config.title}</title>
 <link href="http://${config.hostname}/post/${item.config.filename}/"/>
 <id>http://${config.hostname}/${item.config.filename}/</id>
 </entry>`).join('\n')

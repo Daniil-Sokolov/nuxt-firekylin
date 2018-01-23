@@ -44,7 +44,11 @@ navigation:
   - 
     url: /link
     option: link
-    label: 链接
+    label: 关注
+
+  - url: /collection
+    option: archive
+    label: 收藏
 
 ## 分页大小
 page_size: 10

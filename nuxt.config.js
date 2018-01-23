@@ -59,19 +59,18 @@ module.exports = {
   ],
   plugins: [
     '~plugins/install.js',
-	{
-	  src: '~plugins/fenxi.js',
-	  ssr: false
-	}
+    {
+      src: '~plugins/fenxi.js',
+      ssr: false
+    }
   ],
   modules: [
     ['@nuxtjs/sitemap'],
-    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }],
-    '@nuxtjs/workbox'
+    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }]
   ],
   build: {
     extractCSS: true,
-    publicPath: '/static/',
+    publicPath: '/static/'
   },
   render: {
     resourceHints: false

@@ -6,7 +6,7 @@ import Pagination from '../components/pagination.vue'
 import Collection from '../components/collection.vue'
 import Embeding from '../components/embeding.vue'
 import Caniuse from '../components/caniuse.vue'
-import GitmentComment from '../components/gitment.vue'
+import GitalkComment from '../components/gitalk.vue'
 
 // eslint-disable-next-line
 import config from 'json-loader!yaml-loader!../config.yaml'
@@ -24,7 +24,9 @@ Vue.component('pagination', Pagination)
 Vue.component('collection', Collection)
 Vue.component('embeding', Embeding)
 Vue.component('caniuse', Caniuse)
-Vue.component('gitment', GitmentComment)
+Vue.component('gitalk', GitalkComment)
+
+Vue.prototype.$gitalkConfig = config.gitalk
 
 // 注入配置
 Vue.prototype.$config = Object.freeze(config)
@@ -42,7 +44,7 @@ Vue.prototype.$fixCode = function () {
     elem.parentNode.insertBefore(pre, elem)
     elem.parentNode.removeChild(elem)
   })
-  
+
   const codespanAreas = [...this.$el.querySelectorAll('textarea.codespan')]
   codespanAreas.forEach((elem) => {
     const span = document.createElement('code')

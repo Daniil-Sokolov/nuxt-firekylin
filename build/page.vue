@@ -4,7 +4,7 @@
     <div class="entry-content">
 __MARKDOWN__
     </div>
-    <gitment v-if="useComment" />
+    <gitalk v-if="useComment" />
   </article>
 </template>
 <script>

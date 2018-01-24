@@ -1,15 +1,17 @@
 <template>
-<div class="error-page">
-<div class="error">
-  <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="#DBE1EC" viewBox="0 0 48 48"><path d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"/></svg>
+  <div class="error-page">
+    <div class="error">
+      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="#DBE1EC" viewBox="0 0 48 48"><path d="M22 30h4v4h-4zm0-16h4v12h-4zm1.99-10C12.94 4 4 12.95 4 24s8.94 20 19.99 20S44 35.05 44 24 35.04 4 23.99 4zM24 40c-8.84 0-16-7.16-16-16S15.16 8 24 8s16 7.16 16 16-7.16 16-16 16z"/></svg>
 
-  <div class="title">{{ message }}</div>
-  <p class="description" v-if="statusCode === 404">
-    <nuxt-link class="error-link" to="/">返回首页</nuxt-link>
-  </p>
-  <p class="description" v-else>An error occurred while rendering the page. Check developer tools console for details.</p>
-</div>
-</div>
+      <div class="title">{{ message }}</div>
+      <p class="description" v-if="statusCode === 404">
+        <nuxt-link class="error-link" to="/">返回首页</nuxt-link>
+      </p>
+      <template v-else>
+        <p class="description">抱歉，出错啦~ </p>
+      </template>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -40,11 +42,7 @@ export default {
   created () {
     console.error(this.error)
   },
-  mounted () {
-    setTimeout(() => {
-      location.href = '/'
-    }, 3000)
-  },
+  mounted () {},
   // watch: {
   //   error (newErr) {
   //     if (newErr) {
@@ -65,6 +63,12 @@ export default {
 
 <style>
 .error-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
   padding: 1rem;
   background: #F7F8FB;
   color: #47494E;
@@ -78,11 +82,6 @@ export default {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 }
 .error-page .error {
   max-width: 450px;

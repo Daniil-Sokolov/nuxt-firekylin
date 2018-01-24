@@ -11,7 +11,7 @@
     "clean": "rimraf dist/200.html && rimraf dist/**/*.map"
   },
   "dependencies": {
-    "gitment": "0.0.3",
+    "gitalk": "^1.2.2",
     "vue-fx": "^1.4.0",
     "vue-lazyload": "^1.1.3"
   },

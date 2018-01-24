@@ -52,6 +52,12 @@ module.exports = {
         rel: 'favicon',
         href: '/favicon.ico'
       }
+    ],
+    script: [
+      {
+        src: '/gitalk.min.js',
+        body: true
+      }
     ]
   },
   css: [

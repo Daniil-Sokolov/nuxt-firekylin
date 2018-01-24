@@ -1,4 +1,4 @@
-const path = require('path')
+const { basename, resolve } = require('path')
 const fs = require('fs-extra')
 const glob = require('glob')
 const indent = require('indent')
@@ -9,13 +9,13 @@ const yamlFront = require('yaml-front-matter')
 const renderMd = require('./markded')
 const renderRSS = require('./rss')
 
-const POST_TMPL = fs.readFileSync(path.join(__dirname, './post.vue')).toString()
-const PAGE_TMPL = fs.readFileSync(path.join(__dirname, './page.vue')).toString()
-const siteConf = yaml.safeLoad(fs.readFileSync(path.join(__dirname, '../config.yaml'), 'utf8'))
+const POST_TMPL = fs.readFileSync(resolve(__dirname, './post.vue')).toString()
+const PAGE_TMPL = fs.readFileSync(resolve(__dirname, './page.vue')).toString()
+const siteConf = yaml.safeLoad(fs.readFileSync(resolve(__dirname, '../config.yaml'), 'utf8'))
 
-mkdirp.sync(path.join(__dirname, '../data'))
-mkdirp.sync(path.join(__dirname, '../pages/post'))
-fs.writeFileSync(path.join(__dirname, '../static/CNAME'), siteConf.hostname)
+mkdirp.sync(resolve(__dirname, '../data'))
+mkdirp.sync(resolve(__dirname, '../pages/post'))
+fs.writeFileSync(resolve(__dirname, '../static/CNAME'), siteConf.hostname)
 
 const main = function (data) {
   const metaTags = {}
@@ -23,8 +23,13 @@ const main = function (data) {
   const metaArchives = {}
 
   fs.writeFile(
-    path.join(__dirname, '../static/atom.xml'),
+    resolve(__dirname, '../static/atom.xml'),
     renderRSS(data, siteConf)
+  )
+
+  fs.copySync(
+    resolve(__dirname, '../node_modules/gitalk/dist/gitalk.min.js'),
+    resolve(__dirname, '../static/gitalk.min.js')
   )
 
   data.forEach((item, i) => {
@@ -80,10 +85,11 @@ const main = function (data) {
   // 生成标签和分类下面的文章
   fs.writeFile('./data/posts.json', JSON.stringify(data.map(getPostAbstract)))
 
+  fs.emptyDirSync(resolve(__dirname, '../pages/post'))
   data.forEach((item, index) => {
     const content = makePostVue(makePostInfo(data, index))
     const file = './pages/post/' + item.config.filename + '.vue'
-    fs.writeFile(file, content)
+    fs.writeFileSync(file, content)
   })
 }
 
@@ -190,7 +196,7 @@ function getFileInfo (file) {
   return fs.readFile(file)
     .then(getFrontMatter)
     .then(data => {
-      const filename = path.basename(file).replace(/\.(?:md|markdown)$/, '')
+      const filename = basename(file).replace(/\.(?:md|markdown)$/, '')
       data.config.filename = filename
       return data
     })

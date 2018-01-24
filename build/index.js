@@ -27,11 +27,6 @@ const main = function (data) {
     renderRSS(data, siteConf)
   )
 
-  fs.copySync(
-    resolve(__dirname, '../node_modules/gitalk/dist/gitalk.min.js'),
-    resolve(__dirname, '../static/gitalk.min.js')
-  )
-
   data.forEach((item, i) => {
     const {
       tags = [],

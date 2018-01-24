@@ -13,20 +13,24 @@
       tags: Array
     },
     methods: {
-      renderComment () {
-        if (this._done) return
-        if (!this.$isServer && this.$gitalkConfig) {
-          const id = location.pathname.replace(/\/$/, '')
-          const gitalk = new window.Gitalk(
-            assign({ id }, this.$gitalkConfig)
-          )
-          gitalk.render(this.$refs.container)
-          this._done = true
-        }
+      renderComment (Gitalk) {
+        const id = location.pathname.replace(/\/$/, '')
+        const gitalk = new Gitalk(
+          assign({ id }, this.$gitalkConfig)
+        )
+        gitalk.render(this.$refs.container)
+        this._done = true
       },
+
       handler () {
-        this.$nextTick(() => {
-          this.renderComment()
+        if (this._done || this.$isServer || !this.$gitalkConfig) {
+          return
+        }
+
+        import(/* webpackChunkName: "gitalk-bundle" */'gitalk').then(Gitalk => {
+          this.$nextTick(() => {
+            this.renderComment(Gitalk)
+          })
         })
       }
     }

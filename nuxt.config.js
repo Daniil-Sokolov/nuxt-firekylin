@@ -52,12 +52,6 @@ module.exports = {
         rel: 'favicon',
         href: '/favicon.ico'
       }
-    ],
-    script: [
-      {
-        src: '/gitalk.min.js',
-        body: true
-      }
     ]
   },
   css: [
@@ -70,13 +64,22 @@ module.exports = {
       ssr: false
     }
   ],
-  modules: [
-    ['@nuxtjs/sitemap'],
-    ['@nuxtjs/google-analytics', { ua: 'UA-82805363-1' }]
-  ],
+  modules: [],
   build: {
     extractCSS: true,
-    publicPath: '/static/'
+    publicPath: '/static/',
+    vendor: [
+      'vue-fx',
+      'vue-lazyload',
+      'object-assign'
+    ],
+    filenames: {
+      chunk: '[id]-[chunkhash:8].js',
+      css: 'common.[contenthash:8].css',
+      manifest: 'manifest.[hash:8].js',
+      vendor: 'common.[chunkhash:8].js',
+      app: 'app.[chunkhash:8].js'
+    }
   },
   render: {
     resourceHints: false

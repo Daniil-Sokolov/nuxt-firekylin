@@ -3,11 +3,27 @@
 </template>
 
 <script>
+  import assign from 'object-assign'
+  Object.assign = assign
   export default {
     mounted () {
-      if (!this.$isServer && this.$gitalkConfig) {
-        const gitalk = new window.Gitalk(this.$gitalkConfig)
-        gitalk.render(this.$refs.container)
+      this.$nextTick(() => {
+        this.renderComment()
+      })
+    },
+    methods: {
+      renderComment () {
+        if (!this.$isServer && this.$gitalkConfig) {
+          const conf = {
+            id: location.path,
+            title: document.title,
+            createIssueManually: true
+          }
+          const gitalk = new window.Gitalk(
+            assign(conf, this.$gitalkConfig)
+          )
+          gitalk.render(this.$refs.container)
+        }
       }
     }
   }

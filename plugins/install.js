@@ -18,7 +18,8 @@ config.site_url = siteURL
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   loading: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
-  attempt: 1
+  attempt: 1,
+  lazyComponent: true
 })
 Vue.component('pagination', Pagination)
 Vue.component('collection', Collection)

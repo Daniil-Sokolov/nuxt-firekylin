@@ -168,8 +168,18 @@ function getPostAbstract (item) {
     title,
     category,
     filename,
-    editor
+    editor,
+    desc,
+    description
   } = item.config
+
+  const summary = item.source
+      .replace(/[\n\r\t]/g, '')
+      .replace(/<svg[ >].*?<\/svg>/g, '')
+      .replace(/<\/?[^>]*>/g, '')
+      .replace(/(?:%\d+[\w-]+)+/g, '')
+      .substr(0, 200).trim()
+
   return {
     user: editor || siteConf.site_owner || 'admin',
     title,
@@ -178,12 +188,7 @@ function getPostAbstract (item) {
     date,
     create_time: date.toISOString().slice(0, 10),
     pathname: encodeURIComponent(filename),
-    summary: item.source
-      .replace(/[\n\r\t]/g, '')
-      .replace(/<svg[ >].*?<\/svg>/g, '')
-      .replace(/<\/?[^>]*>/g, '')
-      .replace(/(?:%\d+[\w-]+)+/g, '')
-      .substr(0, 200) + '...'
+    summary: summary ? (summary + '...') : (desc || description)
   }
 }
 

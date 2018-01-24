@@ -16,8 +16,9 @@
       renderComment () {
         if (this._renderred) return
         if (!this.$isServer && this.$gitalkConfig) {
+          const id = this.$route.fullPath.replace(/\/$/, '')
           const gitalk = new window.Gitalk(
-            assign({}, this.$gitalkConfig)
+            assign({ id }, this.$gitalkConfig)
           )
           gitalk.render(this.$refs.container)
           this._renderred = true

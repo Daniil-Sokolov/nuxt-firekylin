@@ -1,5 +1,6 @@
 <style>
 #__nuxt,
+#__layout,
 .wrapper {
   width: 100%;
   height: 100%;  

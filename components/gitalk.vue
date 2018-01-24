@@ -14,20 +14,20 @@
     },
     methods: {
       renderComment () {
-        if (this._renderred) return
+        if (this._done) return
         if (!this.$isServer && this.$gitalkConfig) {
           const id = location.pathname.replace(/\/$/, '')
           const gitalk = new window.Gitalk(
             assign({ id }, this.$gitalkConfig)
           )
           gitalk.render(this.$refs.container)
-          this._renderred = true
+          this._done = true
         }
       },
       handler () {
-        setTimeout(() => {
+        this.$nextTick(() => {
           this.renderComment()
-        }, 1000)
+        })
       }
     }
   }

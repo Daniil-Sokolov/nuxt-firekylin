@@ -22,7 +22,7 @@
     <nuxt-link v-if="post.prev.title" :to="`/post/${post.prev.pathname}`" :title="post.prev.title" class="prev">&laquo; {{ post.prev.title }}</nuxt-link>
     <nuxt-link v-if="post.next.title" :to="`/post/${post.next.pathname}`" :title="post.next.title" class="next">{{ post.next.title }} &raquo;</nuxt-link>
   </nav>
-  <gitalk />
+  <gitalk :tags="tags"/>
 </div>
 </template>
 
@@ -41,7 +41,8 @@
     data () {
       return {
         post: data,
-        post_url: this.$config.site_url + '/post/' + data.pathname
+        post_url: this.$config.site_url + '/post/' + data.pathname,
+        tags: data.tags
       }
     },
     mounted () {

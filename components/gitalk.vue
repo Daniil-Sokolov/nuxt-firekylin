@@ -6,6 +6,9 @@
   import assign from 'object-assign'
   Object.assign = assign
   export default {
+    props: {
+      tags: Array
+    },
     mounted () {
       this.$nextTick(() => {
         this.renderComment()
@@ -17,7 +20,7 @@
           const conf = {
             id: location.path,
             title: document.title,
-            createIssueManually: true
+            labels: this.tags || ['comment']
           }
           const gitalk = new window.Gitalk(
             assign(conf, this.$gitalkConfig)

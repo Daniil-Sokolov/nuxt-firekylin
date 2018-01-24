@@ -17,13 +17,8 @@
     methods: {
       renderComment () {
         if (!this.$isServer && this.$gitalkConfig) {
-          const conf = {
-            id: location.path,
-            title: document.title,
-            labels: this.tags || ['comment']
-          }
           const gitalk = new window.Gitalk(
-            assign(conf, this.$gitalkConfig)
+            assign({}, this.$gitalkConfig)
           )
           gitalk.render(this.$refs.container)
         }

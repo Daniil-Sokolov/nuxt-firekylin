@@ -23,7 +23,7 @@
           this._renderred = true
         }
       },
-      render () {
+      handler () {
         setTimeout(() => {
           this.renderComment()
         }, 1000)

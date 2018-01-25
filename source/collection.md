@@ -18,6 +18,7 @@ AI 教程
 
 An Interactive Introduction To Quantum Computing
 
+PS: [LectureNotes](https://cs.uwaterloo.ca/~watrous/CPSC519/LectureNotes/all.pdf)
 
 
 

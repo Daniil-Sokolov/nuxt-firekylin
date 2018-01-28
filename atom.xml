@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <feed xmlns="http://www.w3.org/2005/Atom">
+    <title>文蔺的博客</title>
+    <link href="/atom.xml" rel="self"/>
+    <link href="http://www.wemlion.com/"/>
+    <updated>2018-01-28T05:46:13.933Z</updated>
+    <id>http://www.wemlion.com/</id>
+    <author>
+      <name>文蔺</name>
+    </author>
+      <entry>        
+<title>读稻盛和夫《干法》</title>
+<link href="http://www.wemlion.com/post/thinking-on-inamori-kazuos-book/"/>
+<id>http://www.wemlion.com/thinking-on-inamori-kazuos-book/</id>
+</entry>
+<entry>        
+<title>读《一分钟经理人》</title>
+<link href="http://www.wemlion.com/post/one-minute-manager/"/>
+<id>http://www.wemlion.com/one-minute-manager/</id>
+</entry>
+<entry>        
+<title>极速渲染引擎 WebRender 揭秘</title>
+<link href="http://www.wemlion.com/post/firefox-webrender/"/>
+<id>http://www.wemlion.com/firefox-webrender/</id>
+</entry>
+<entry>        
+<title>深入 JavaScript 数组：进化与性能</title>
+<link href="http://www.wemlion.com/post/javascript-array-evolution-performance/"/>
+<id>http://www.wemlion.com/javascript-array-evolution-performance/</id>
+</entry>
+<entry>        
+<title>ArrayBuffer and TypedArray in ES2015</title>
+<link href="http://www.wemlion.com/post/es2015-arraybuffer/"/>
+<id>http://www.wemlion.com/es2015-arraybuffer/</id>
+</entry>
+<entry>        
+<title>font-display 的使用</title>
+<link href="http://www.wemlion.com/post/font-display/"/>
+<id>http://www.wemlion.com/font-display/</id>
+</entry>
+<entry>        
+<title>事件代理：模式 or 反模式？</title>
+<link href="http://www.wemlion.com/post/event-delegation-pattern-or-anti-pattern/"/>
+<id>http://www.wemlion.com/event-delegation-pattern-or-anti-pattern/</id>
+</entry>
+<entry>        
+<title>函数响应式编程 —— RxJS 简介</title>
+<link href="http://www.wemlion.com/post/functional-programming/"/>
+<id>http://www.wemlion.com/functional-programming/</id>
+</entry>
+<entry>        
+<title>ES2015 Reflection API</title>
+<link href="http://www.wemlion.com/post/es2015-reflect/"/>
+<id>http://www.wemlion.com/es2015-reflect/</id>
+</entry>
+<entry>        
+<title>Web 安全清单</title>
+<link href="http://www.wemlion.com/post/web-developer-security-checklist/"/>
+<id>http://www.wemlion.com/web-developer-security-checklist/</id>
+</entry>
+  </feed>
